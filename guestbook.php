@@ -6,6 +6,10 @@
     <title>ITF Database Lab</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 <?php
@@ -20,7 +24,7 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 <div class="container">
     <h1>Guestbook</h1>
     <table class="table table-responsive-md">
-        <thead>
+        <thead = class="thead-dark">
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Comment</th>
@@ -32,25 +36,27 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 while($row = mysqli_fetch_array($res))
 {
 ?>
-        <tbody>
-            <tr>
-                <td><?php echo $row['Name'];?></div></td>
-                <td><?php echo $row['Comment'];?></td>
-                <td><?php echo $row['Link'];?></td>
-                <td>
-                    <div class="d-inline">
-                        <form action="edit_form.php" method="post" class="d-inline">
-                            <input type="hidden" name="ID" value=<?php echo $row['ID'];?>>
-                            <button type="submit" class="btn btn-sm btn-primary mb-1">Edit</button>
-                        </form>
-                        <form action="delete.php" method="post" class="d-inline">
-                            <input type="hidden" name="ID" value=<?php echo $row['ID'];?>>
-                            <button type="submit" class="btn btn-sm btn-danger mb-1">Delete</button>
-                        </form>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
+        <thead class="thead-light">
+            <tbody>
+                <tr>
+                    <td><?php echo $row['Name'];?></div></td>
+                    <td><?php echo $row['Comment'];?></td>
+                    <td><?php echo $row['Link'];?></td>
+                    <td>
+                        <div class="d-inline">
+                            <form action="edit_form.php" method="post" class="d-inline">
+                                <input type="hidden" name="ID" value=<?php echo $row['ID'];?>>
+                                <button type="submit" class="btn btn-sm btn-primary mb-1">Edit</button>
+                            </form>
+                            <form action="delete.php" method="post" class="d-inline">
+                                <input type="hidden" name="ID" value=<?php echo $row['ID'];?>>
+                                <button type="submit" class="btn btn-sm btn-danger mb-1">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+          </thead>
 <?php
 }
 mysqli_close($conn);
