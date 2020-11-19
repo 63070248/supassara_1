@@ -24,7 +24,7 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 <div class="container">
     <h1>Guestbook</h1>
     <table class="table table-responsive-md">
-        <thead = class="thead-dark">
+        <thead = class="table table-striped">
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Comment</th>
@@ -36,15 +36,14 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 while($row = mysqli_fetch_array($res))
 {
 ?>
-        <thead class="thead-light">
-            <tbody>
-                <tr>
-                    <td><?php echo $row['Name'];?></div></td>
-                    <td><?php echo $row['Comment'];?></td>
-                    <td><?php echo $row['Link'];?></td>
-                    <td>
-                        <div class="d-inline">
-                            <form action="edit_form.php" method="post" class="d-inline">
+        <tbody>
+            <tr>
+               <td><?php echo $row['Name'];?></div></td>
+               <td><?php echo $row['Comment'];?></td>
+               <td><?php echo $row['Link'];?></td>
+               <td>
+                  <div class="d-inline">
+                       <form action="edit_form.php" method="post" class="d-inline">
                                 <input type="hidden" name="ID" value=<?php echo $row['ID'];?>>
                                 <button type="submit" class="btn btn-sm btn-primary mb-1">Edit</button>
                             </form>
