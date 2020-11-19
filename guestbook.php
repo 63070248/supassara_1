@@ -56,11 +56,11 @@ while($row = mysqli_fetch_array($res))
                 </tr>
             </tbody>
         </thead>
-     </table>
 <?php
 }
 mysqli_close($conn);
 ?>
+        </table>
     </table>
     <div class="text-center">
         <a href="insert_form.php" class="btn btn-primary">Insert</a>
