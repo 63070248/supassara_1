@@ -31,7 +31,6 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
                 <th scope="col">Link</th>
                 <th scope="col">Action</th>
             </tr>
-        </thead>
 <?php
 while($row = mysqli_fetch_array($res))
 {
