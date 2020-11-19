@@ -11,7 +11,7 @@
 <?php
 $conn = mysqli_init();
 mysqli_real_connect($conn, 'looknam.mysql.database.azure.com', 'looknam@looknam', 'Supass_13', 'looknam', 3306);
-if (mysqli_connect_errno($conn))
+if (!$conn)
 {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
