@@ -34,7 +34,7 @@ while($Result = mysqli_fetch_array($res))
 }
 ?>
 </table>
-<div class="text-center">
+<div class="container" style="text-aligh: center;pandding: 2%;">
   <a href="https://web247.azurewebsites.net/from.html">
      <button style="background-color: rgb(212, 74, 127);border-radius: 5px;font-size: mediun;color: white; height: 25px;border: none;width: 50px;">เพิ่ม</button>
   </a>
