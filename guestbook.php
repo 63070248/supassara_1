@@ -23,8 +23,8 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 ?>
 <div class="container">
     <h1>Guestbook</h1>
-    <table class="table table-responsive-md">
-        <thead = class="table table-striped">
+    <table class="table table-responsive-md", "table table-striped">
+        <thead>
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Comment</th>
