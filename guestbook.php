@@ -23,38 +23,40 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
 ?>
 <div class="container">
     <h1>Guestbook</h1>
-    <table class="table table-responsive-md", "table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Comment</th>
-                <th scope="col">Link</th>
-                <th scope="col">Action</th>
-            </tr>
+    <table class="table table-responsive-md">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Comment</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Action</th>
+                </tr>
 <?php
 while($row = mysqli_fetch_array($res))
 {
 ?>
-        <tbody>
-            <tr>
-               <td><?php echo $row['Name'];?></div></td>
-               <td><?php echo $row['Comment'];?></td>
-               <td><?php echo $row['Link'];?></td>
-               <td>
-                  <div class="d-inline">
-                       <form action="edit_form.php" method="post" class="d-inline">
-                           <input type="hidden" name="ID" value=<?php echo $row['ID'];?>>
-                           <button type="submit" class="btn btn-sm btn-primary mb-1">Edit</button>
-                        </form>
-                        <form action="delete.php" method="post" class="d-inline">
-                            <input type="hidden" name="ID" value=<?php echo $row['ID'];?>>
-                            <button type="submit" class="btn btn-sm btn-danger mb-1">Delete</button>
-                         </form>
-                     </div>
-                 </td>
-             </tr>
-          </tbody>
-      </thead>
+            <tbody>
+                <tr>
+                    <td><?php echo $row['Name'];?></div></td>
+                    <td><?php echo $row['Comment'];?></td>
+                    <td><?php echo $row['Link'];?></td>
+                    <td>
+                        <div class="d-inline">
+                            <form action="edit_form.php" method="post" class="d-inline">
+                                <input type="hidden" name="ID" value=<?php echo $row['ID'];?>>
+                                <button type="submit" class="btn btn-sm btn-primary mb-1">Edit</button>
+                            </form>
+                            <form action="delete.php" method="post" class="d-inline">
+                                <input type="hidden" name="ID" value=<?php echo $row['ID'];?>>
+                                <button type="submit" class="btn btn-sm btn-danger mb-1">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </thead>
+     </table>
 <?php
 }
 mysqli_close($conn);
