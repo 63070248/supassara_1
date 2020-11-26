@@ -28,8 +28,7 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
             <thead>
                 <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Comment</th>
-                    <th scope="col">Link</th>
+                    <th scope="col">type</th>
                     <th scope="col">Action</th>
                 </tr>
 <?php
@@ -39,8 +38,7 @@ while($row = mysqli_fetch_array($res))
             <tbody>
                 <tr>
                     <td><?php echo $row['Name'];?></div></td>
-                    <td><?php echo $row['Comment'];?></td>
-                    <td><?php echo $row['Link'];?></td>
+                    <td><?php echo $row['Type'];?></td>
                     <td>
                         <div class="d-inline">
                             <form action="edit_form.php" method="post" class="d-inline">
